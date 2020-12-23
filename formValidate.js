@@ -26,9 +26,9 @@ const FormValidate = function(form, onSend){
             const dataTypeMismatch = field.dataset.typemismatch;
             const dataPatternMismatch = field.dataset.patternmismatch;
             const typeMismatch = field.validity.typeMismatch;
-			  	const tooShort = field.validity.tooShort;
-			  	const tooLong = field.validity.tooLong; 
-			  	const stepMismatch = field.validity.stepMismatch;
+			const tooShort = field.validity.tooShort;
+			const tooLong = field.validity.tooLong; 
+			const stepMismatch = field.validity.stepMismatch;
             const patternMismatch = field.validity.patternMismatch;
             const valueMissing = field.validity.valueMissing;
             if (!field.checkValidity()) {
