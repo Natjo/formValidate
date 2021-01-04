@@ -38,10 +38,13 @@ formValidate(form, () => {
 ### Ajax
 Send **ajax** if form is valid.  
 If **nonce** needed, add it to the form with `data-nonce`  
-List of errors:
-- `300` error validation field
-- `200` ok
-- `500` error sending email
+
+| Error | Description |
+| ------ | ------ |
+| `300` | error validation field |
+| `200` | ok |
+| `500` | error sending email |
+
 ```javascript
 import formValidate from '../../modules/formValidate/formValidate.js';
 
@@ -54,22 +57,7 @@ formValidate(form, e => {
 
     const xhr = new XMLHttpRequest();
     xhr.open('POST', url, true);
-    xhr.onreadystatechange = () => {
-        if (xhr.readyState === 4 && (xhr.status === 200 || xhr.status === 0)) {
-            const response = JSON.parse(xhr.response);
-            if(response.status === 200){
-                form.reset();
-                e.reset();
-            }
-            if(response.status === 300){
-                console.log(response.msg);
-            }
-            if(response.status === 500){
-                console.log(response.msg);
-            }
-        }
-    };
-    /*xhr.onload = () => {
+    xhr.onload = () => {
         const response = JSON.parse(xhr.response);
         if(response.status === 200){
             form.reset();
@@ -81,7 +69,7 @@ formValidate(form, e => {
         if(response.status === 500){
             console.log(response.msg);
         }
-    }*/
+    }
     xhr.error = () => {
        console.log('error');
     }
