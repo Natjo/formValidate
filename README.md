@@ -75,7 +75,7 @@ new formValidate(form, e => {
     }
 
   // Définissez ce qui arrive en cas d'erreur
-  XHR.addEventListener('error', function(event) {
+  xhr.addEventListener('error', function(event) {
     alert('Oups! Quelque chose s\'est mal passé.');
   });
     xhr.send(formData);
