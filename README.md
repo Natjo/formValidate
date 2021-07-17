@@ -31,7 +31,7 @@ Check validity of form before submit.
 import formValidate from '../../modules/formValidate/formValidate.js';
 
 const form = document.querySelector('form');
-formValidate(form, () => {
+new formValidate(form, () => {
     form.submit();
 });
 ```
@@ -50,7 +50,7 @@ import formValidate from '../../modules/formValidate/formValidate.js';
 
 const form = document.querySelector('form');
 const url = paramsData.wp_ajax_url;
-formValidate(form, e => {
+new formValidate(form, e => {
     const formData = new FormData(form);
     formData.append('nonce', form.dataset.nonce);
     formData.append('action', form.action);
